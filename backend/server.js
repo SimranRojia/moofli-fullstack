@@ -15,10 +15,11 @@ const app = express();
 
 // --- Allowed Origins ---
 const whitelist = [
-  "http://localhost:3000",          
+  "http://localhost:3000",
   "https://mooflidiary.vercel.app",
-  "https://www.moofli.co.in"
-];
+  "https://www.moofli.co.in",
+  process.env.CLIENT_URL,
+].filter(Boolean);
 
 // --- CORS Configuration ---
 const corsOptions = {
